@@ -11,6 +11,9 @@ public class player : MonoBehaviour
     [SerializeField]
     private float speed;
 
+    [SerializeField]
+    private float fallDelay;
+
     float jumpCount = 0;
 
     private void Awake()
@@ -30,8 +33,14 @@ public class player : MonoBehaviour
         {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             jumpCount++;
+            Invoke("ApplyDownwardForce", fallDelay);
         }
     }
+    private void ApplyDownwardForce()
+    {
+        rigid.velocity += Vector2.down * jumpPower;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Ground"))
