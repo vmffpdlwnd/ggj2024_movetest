@@ -21,7 +21,7 @@ public class player : MonoBehaviour
     private void FixedUpdate()
     {
         float h = Input.GetAxisRaw("Horizontal");
-        rigid.AddForce(Vector2.right * h * speed, ForceMode2D.Impulse);
+        rigid.velocity = new Vector2(h * speed, rigid.velocity.y);
     }
 
     private void Update()
