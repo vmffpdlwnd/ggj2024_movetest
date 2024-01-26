@@ -227,6 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec20dd6965b4d2a4c8471ec67eaec277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpPower: 5
+  speed: 0.1
 --- !u!212 &40038746
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -398,8 +400,8 @@ GameObject:
   - component: {fileID: 722162017}
   - component: {fileID: 722162016}
   m_Layer: 0
-  m_Name: Square
-  m_TagString: Untagged
+  m_Name: Ground
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
